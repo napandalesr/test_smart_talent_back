@@ -10,13 +10,17 @@ export class HotelController {
 
   @Post()
   create(@Body() createHotelDto: CreateHotelDto, @Req() req: RequestWithTokenData) {
-    console.log("user", req);
     return this.hotelService.create(createHotelDto);
   }
 
   @Get('all/:id')
-  findAll(@Param('id') id: number) {
-    return this.hotelService.findAll(id);
+  findAllByAgency(@Param('id') id: number) {
+    return this.hotelService.findAllByAgency(id);
+  }
+
+  @Get()
+  findAll() {
+    return this.hotelService.findAll();
   }
 
   @Get(':id')

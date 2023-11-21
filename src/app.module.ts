@@ -10,6 +10,7 @@ import { RoomModule } from './room/room.module';
 import { HotelModule } from './hotel/hotel.module';
 import { GuestModule } from './guest/guest.module';
 import { BookingModule } from './booking/booking.module';
+import { ContactemergencyModule } from './contactemergency/contactemergency.module';
 
 import 'dotenv/config';
 
@@ -41,6 +42,7 @@ import 'dotenv/config';
     HotelModule,
     GuestModule,
     BookingModule,
+    ContactemergencyModule,
   ],
   controllers: [AppController],
   providers: [AppService],

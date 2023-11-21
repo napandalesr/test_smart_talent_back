@@ -37,15 +37,6 @@ export class Guest {
   @Column({type:'int'})
   telephone: number;
 
-  @Column({type:'int'})
-  emergencyContact: number;
-
-  @Column({type:'text'})
-  contactName: string;
-
-  @Column({type:'int'})
-  contactTelephone: number;
-
   @ManyToOne(() => Booking, (booking) => booking.guests, {
     nullable: false,
     onDelete: 'CASCADE',

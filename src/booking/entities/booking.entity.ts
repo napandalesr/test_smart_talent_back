@@ -1,3 +1,4 @@
+import { Contactemergency } from "src/contactemergency/entities/contactemergency.entity";
 import { Guest } from "src/guest/entities/guest.entity";
 import { Room } from "src/room/entities/room.entity";
 import { User } from "src/users/entities/user.entity";
@@ -28,4 +29,11 @@ export class Booking {
     cascade: true,
   })
   guests?: Guest[];
+
+  @OneToMany(() => Contactemergency, (contactemergency) => contactemergency.booking, {
+    eager: true,
+    nullable: true,
+    cascade: true,
+  })
+  contactemergency?: Contactemergency[]
 }

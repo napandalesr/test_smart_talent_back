@@ -18,7 +18,7 @@ export class HotelService {
     });
   }
 
-  findAll(idUser: number) {
+  findAllByAgency(idUser: number) {
     return this.hotelRepository.find({
       where: {
         user: {
@@ -28,8 +28,16 @@ export class HotelService {
     });
   }
 
+  findAll() {
+    return this.hotelRepository.find();
+  }
+
   findOne(id: number) {
-    return `This action returns a #${id} hotel`;
+    return this.hotelRepository.findOne({
+      where: {
+        id
+      }
+    });
   }
 
   update(id: number, updateHotelDto: UpdateHotelDto) {
